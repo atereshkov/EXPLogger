@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/atereshkov/EXPLogger.git", :tag => s.version }
 
-  s.source_files  = "EXPLogger/EXPLogger/*.swift"
+  # s.source_files  = "EXPLogger", "EXPLogger/**/*.{h,m,swift}"
+  s.source_files  = "EXPLogger/*.{h,m}"
 
 end
