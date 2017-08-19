@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "EXPLogger"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "Simple and lightweight logger for Swift"
   s.homepage     = "https://github.com/atereshkov/EXPLogger.git"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"

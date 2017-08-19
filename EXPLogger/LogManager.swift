@@ -8,9 +8,9 @@
 
 import Foundation
 
-class LogManager: NSObject {
+public class LogManager: NSObject {
     
-    public func getMyTestLog(value: String) -> String {
+    public func testLog(with value: String) -> String {
         return "Hello, \(value)"
     }
     
