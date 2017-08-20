@@ -1,15 +1,20 @@
 # EXPLogger 
 ![](https://img.shields.io/cocoapods/v/EXPLogger.svg) ![](https://img.shields.io/cocoapods/p/EXPLogger.svg) ![](https://img.shields.io/cocoapods/l/EXPLogger.svg) ![](https://img.shields.io/cocoapods/dt/EXPLogger.svg) ![](https://img.shields.io/cocoapods/dw/EXPLogger.svg)
-
 ### A lightweight and simple logger for Swift projects
+
+Colorful, flexible, lightweight logging for Swift 3 & Swift 4 (working on it :D).
+
+---
 
 ## Navigation
 
 * [Example](#example)
-* [Installation](#installation)
-* [Advanced Usage](#advanced-usage)
+* [Installation](#installation)* [Advanced Usage](#advanced-usage)
 * [Documentation](#documentation)
+* [Changelog](#changelog)
 * [License](#license)
+
+---
 
 ## Example
 
@@ -19,8 +24,10 @@ Example of output in Xcode Console:
 
 * Now there are some problems with displaying colors from the Xcode 8, so they are temporarily replaced by Emoji.
 
-## Installation
 
+---
+
+## Installation
 
 ### Cocoapods
 
@@ -41,9 +48,11 @@ Will be available soon.
 
 Will be available soon.
 
+---
+
 ## Usage
 
-_This quick start method is intended just to get you up and running with the logger. You should however use the advanced usage below to get the most out of this library._
+_This quick start method is intended just to get you up and running with the EXPLogger. You should however use the [advanced usage](#advanced-usage) below to get the most out of this library._
 
 Add this code at the top of your AppDelegate.swift to be able to use EXPLogger in your whole project. 
 Or just use it in your individual classes. It's up to you.
@@ -80,13 +89,19 @@ log.error("Some error")
 log.critical("Something went so wrong with critical prior")
 ```
 
+The different methods set the log level of the message. EXPLogger will only print messages with a log level that is greater to or equal to it's current log level setting. So a logger with a level of .error will only output log messages with a level of .error, or .critical.
+
 ## Advanced Usage
 
-
+Will be filled soon.
 
 ## Documentation
 
-Will be filled out soon.
+Will be filled soon.
+
+## Changelog
+
+See [CHANGELOG](https://github.com/atereshkov/EXPLogger/blob/master/CHANGELOG).
 
 ## License
 
