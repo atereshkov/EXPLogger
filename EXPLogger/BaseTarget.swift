@@ -85,8 +85,25 @@ public class BaseTarget: Hashable {
             return logTag.warning
         case EXPLogger.LogLevel.error:
             return logTag.error
-        default:
-            return logTag.verbose
+        case EXPLogger.LogLevel.critical:
+            return logTag.critical
+        }
+    }
+    
+    func color(for level: EXPLogger.LogLevel) -> String {
+        switch level {
+        case EXPLogger.LogLevel.verbose:
+            return logColor.verbose
+        case EXPLogger.LogLevel.debug:
+            return logColor.debug
+        case EXPLogger.LogLevel.info:
+            return logColor.info
+        case EXPLogger.LogLevel.warning:
+            return logColor.warning
+        case EXPLogger.LogLevel.error:
+            return logColor.error
+        case EXPLogger.LogLevel.critical:
+            return logColor.critical
         }
     }
     
@@ -114,28 +131,6 @@ public class BaseTarget: Hashable {
         }
         
         return filename
-    }
-    
-    
-    func color(for level: EXPLogger.LogLevel) -> String {
-        var color = ""
-        
-        switch level {
-        case EXPLogger.LogLevel.verbose:
-            color = logColor.verbose
-        case EXPLogger.LogLevel.debug:
-            color = logColor.debug
-        case EXPLogger.LogLevel.info:
-            color = logColor.info
-        case EXPLogger.LogLevel.warning:
-            color = logColor.warning
-        case EXPLogger.LogLevel.error:
-            color = logColor.error
-        default:
-            color = logColor.verbose
-        }
-        
-        return color
     }
     
 }
