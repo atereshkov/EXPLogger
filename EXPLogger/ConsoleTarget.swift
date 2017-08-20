@@ -12,6 +12,10 @@ public class ConsoleTarget: BaseTarget {
     
     override public var defaultHashValue: Int { return 1 }
     
+    public override init() {
+        super.init()
+    }
+    
     override public func send(_ level: EXPLogger.LogLevel, msg: String, thread: String,
                               file: String, function: String, line: Int) -> String? {
         let formattedLog = super.send(level, msg: msg, thread: thread, file: file, function: function, line: line)
