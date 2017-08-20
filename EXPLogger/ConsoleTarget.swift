@@ -16,15 +16,10 @@ public class ConsoleTarget: BaseTarget {
         super.init()
     }
     
-    override public func send(_ level: EXPLogger.LogLevel, msg: String, thread: String,
-                              file: String, function: String, line: Int) -> String? {
-        let formattedLog = super.send(level, msg: msg, thread: thread, file: file, function: function, line: line)
+    override public func send(_ level: EXPLogger.LogLevel, msg: String, thread: String, file: String, function: String, line: Int) {
+        let formattedLog = formatMessage(level: level, msg: msg, thread: thread, file: file, function: function, line: line)
         
-        if let log = formattedLog {
-            Swift.print(log)
-        }
-        
-        return formattedLog
+        Swift.print(formattedLog)
     }
     
 }
