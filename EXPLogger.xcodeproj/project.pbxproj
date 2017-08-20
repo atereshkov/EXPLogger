@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A30DD5F01F4991D400E522DE /* BaseTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30DD5EF1F4991D400E522DE /* BaseTarget.swift */; };
+		A30DD5F21F499B7900E522DE /* ConsoleTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30DD5F11F499B7900E522DE /* ConsoleTarget.swift */; };
 		A360EDC71F4780870076E291 /* EXPLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = A360EDC51F4780870076E291 /* EXPLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A360EDCE1F4783B80076E291 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360EDCD1F4783B80076E291 /* LogManager.swift */; };
+		A360EDCE1F4783B80076E291 /* EXPLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A360EDCD1F4783B80076E291 /* EXPLogger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A30DD5EF1F4991D400E522DE /* BaseTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTarget.swift; sourceTree = "<group>"; };
+		A30DD5F11F499B7900E522DE /* ConsoleTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleTarget.swift; sourceTree = "<group>"; };
 		A360EDC21F4780870076E291 /* EXPLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EXPLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A360EDC51F4780870076E291 /* EXPLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXPLogger.h; sourceTree = "<group>"; };
 		A360EDC61F4780870076E291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A360EDCD1F4783B80076E291 /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
+		A360EDCD1F4783B80076E291 /* EXPLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXPLogger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +54,9 @@
 			children = (
 				A360EDC51F4780870076E291 /* EXPLogger.h */,
 				A360EDC61F4780870076E291 /* Info.plist */,
-				A360EDCD1F4783B80076E291 /* LogManager.swift */,
+				A360EDCD1F4783B80076E291 /* EXPLogger.swift */,
+				A30DD5EF1F4991D400E522DE /* BaseTarget.swift */,
+				A30DD5F11F499B7900E522DE /* ConsoleTarget.swift */,
 			);
 			path = EXPLogger;
 			sourceTree = "<group>";
@@ -135,7 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A360EDCE1F4783B80076E291 /* LogManager.swift in Sources */,
+				A30DD5F01F4991D400E522DE /* BaseTarget.swift in Sources */,
+				A30DD5F21F499B7900E522DE /* ConsoleTarget.swift in Sources */,
+				A360EDCE1F4783B80076E291 /* EXPLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
