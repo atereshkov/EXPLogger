@@ -14,6 +14,15 @@ public class ConsoleTarget: BaseTarget {
     
     public override init() {
         super.init()
+        
+        // setting up colors
+        reset = "\u{001b}[0m"
+        escape = "\u{001b}[38;5;"
+        logColor.verbose = "251m"
+        logColor.debug = "35m"
+        logColor.info = "38m"
+        logColor.warning = "178m"
+        logColor.error = "197m"
     }
     
     override public func send(_ level: EXPLogger.LogLevel, msg: String, thread: String, file: String, function: String, line: Int) {

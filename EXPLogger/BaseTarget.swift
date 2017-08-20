@@ -38,6 +38,8 @@ public class BaseTarget: Hashable {
     
     // custom color for target
     open var logColor = LogColor()
+    var reset = ""
+    var escape = ""
     
     private let dateFormatter = DateFormatter()
     open var defaultDateFormat = "HH:mm:ss.SSS"
@@ -57,8 +59,9 @@ public class BaseTarget: Hashable {
         var log = ""
         
         log += formatDate() + " "
-        log += displayTag(level)
-        log += fileName(of: file, withSuffix: false) + "."
+        log += escape + color(for: level)
+        log += tag(for: level) + reset + " "
+        log += fileName(of: file, withoutSuffix: true) + "."
         log += function + ":"
         log += String(line) + " - "
         log += msg
@@ -69,7 +72,7 @@ public class BaseTarget: Hashable {
     
     // MARK: Help
     
-    func displayTag(_ level: EXPLogger.LogLevel) -> String {
+    func tag(for level: EXPLogger.LogLevel) -> String {
         
         switch level {
         case EXPLogger.LogLevel.verbose:
@@ -88,14 +91,14 @@ public class BaseTarget: Hashable {
     }
     
     func formatDate(_ dateFormat: String = "", timeZone: String = "") -> String {
-        dateFormatter.dateFormat = dateFormat
+        dateFormatter.dateFormat = dateFormat.isEmpty ? defaultDateFormat : dateFormat
         dateFormatter.timeZone = timeZone.isEmpty ? TimeZone.current : TimeZone(abbreviation: timeZone)
         
         let dateString = dateFormatter.string(from: Date())
         return dateString
     }
     
-    func fileName(of file: String, withSuffix: Bool) -> String {
+    func fileName(of file: String, withoutSuffix: Bool) -> String {
         var filename = ""
         
         let fileParts = file.components(separatedBy: "/")
@@ -103,7 +106,7 @@ public class BaseTarget: Hashable {
             filename = lastPart
         }
         
-        if !filename.isEmpty && withSuffix {
+        if !filename.isEmpty && withoutSuffix {
             let fileNameParts = filename.components(separatedBy: ".")
             if let firstPart = fileNameParts.first {
                 filename = firstPart
@@ -113,6 +116,27 @@ public class BaseTarget: Hashable {
         return filename
     }
     
+    
+    func color(for level: EXPLogger.LogLevel) -> String {
+        var color = ""
+        
+        switch level {
+        case EXPLogger.LogLevel.verbose:
+            color = logColor.verbose
+        case EXPLogger.LogLevel.debug:
+            color = logColor.debug
+        case EXPLogger.LogLevel.info:
+            color = logColor.info
+        case EXPLogger.LogLevel.warning:
+            color = logColor.warning
+        case EXPLogger.LogLevel.error:
+            color = logColor.error
+        default:
+            color = logColor.verbose
+        }
+        
+        return color
+    }
     
 }
 
