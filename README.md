@@ -59,13 +59,13 @@ Or just use it in your individual classes. It's up to you.
 
 1. Import
 
-```
+```swift
 import SwiftyBeaver
 ```
 
 2. Declare an instance of the logger
 
-```
+```swift
 let log = EXPLogger.self
 ```
 
@@ -73,7 +73,7 @@ In the AppDelegate method didFinishLaunchingWithOptions() add the EXPLogger log 
 
 3. Set up logger
 
-```
+```swift
 // add log targets (important! at least one is needed)
 let console = ConsoleTarget() // xcode console
 
