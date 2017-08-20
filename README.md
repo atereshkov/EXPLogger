@@ -9,7 +9,8 @@ Colorful, flexible, lightweight logging for Swift 3 & Swift 4 (working on it :D)
 ## Navigation
 
 * [Example](#example)
-* [Installation](#installation)* [Advanced Usage](#advanced-usage)
+* [Installation](#installation)
+* [Advanced Usage](#advanced-usage)
 * [Documentation](#documentation)
 * [Changelog](#changelog)
 * [License](#license)
@@ -23,7 +24,6 @@ Example of output in Xcode Console:
 ![Example of output](http://image.ibb.co/dXyJWk/image.png)
 
 * Now there are some problems with displaying colors from the Xcode 8, so they are temporarily replaced by Emoji.
-
 
 ---
 
@@ -91,17 +91,25 @@ log.critical("Something went so wrong with critical prior")
 
 The different methods set the log level of the message. EXPLogger will only print messages with a log level that is greater to or equal to it's current log level setting. So a logger with a level of .error will only output log messages with a level of .error, or .critical.
 
+---
+
 ## Advanced Usage
 
 Will be filled soon.
+
+---
 
 ## Documentation
 
 Will be filled soon.
 
+---
+
 ## Changelog
 
 See [CHANGELOG](https://github.com/atereshkov/EXPLogger/blob/master/CHANGELOG).
+
+---
 
 ## License
 
