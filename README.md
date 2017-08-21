@@ -60,7 +60,7 @@ Or just use it in your individual classes. It's up to you.
 1. Import
 
 ```swift
-import SwiftyBeaver
+import EXPLogger
 ```
 
 2. Declare an instance of the logger
