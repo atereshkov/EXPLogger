@@ -80,7 +80,7 @@ In the AppDelegate method didFinishLaunchingWithOptions() add the EXPLogger log 
 let console = ConsoleTarget() // xcode console
 
 // add the targets to log
-log.addDestination(console)
+log.addTarget(console)
 
 // log anything you want in your whole project!
 log.verbose("Some non important information that can be easily skipped")
@@ -97,6 +97,39 @@ The different methods set the log level of the message. EXPLogger will only prin
 
 ## Advanced Usage
 
+EXPLogger allows for much greater control and flexibility.
+
+EXPlogger can be configured to deliver log messages to a variety of destinations. Using the [basic setup](#usage) above, the logger will output log messages to the standard Xcode debug console just in a few lines of setup.
+
+* Here's an example of configuring the logger with some additional settings.
+
+```swift
+// add log targets
+let console = ConsoleTarget() // xcode console
+
+console.showDate = false // (default is true)
+console.showLogTag = true // (default is true)
+console.showFileName = true // (default is true)
+console.showFunctionName = false // (default is true)
+console.showThreadName = true // (default is false) *will be available soon
+console.showLineNumber = true // (default is true)
+console.showLevel = false // (default is true)
+console.showFileSuffix = true // (default is true)
+console.enableColors = false // (default is false) *not working for now in Xcode 8
+console.defaultDateFormat = "HH:mm:ss" // (default is "HH:mm:ss.SSS")
+console.defaultTimeZone = "UTC" // (default will be TimeZone.Current)
+
+// add the targets to log
+log.addTarget(console)
+
+// log anything you want in your whole project!
+...
+```
+
+If you don't configure these functions, EXPLogger will work based on default values.
+
+* Here's an example of configuring the logger with some additional destinations.
+
 Will be filled soon.
 
 ---
@@ -107,7 +140,7 @@ Will be filled soon.
 
 ---
 
-## Communcation and Help
+## Communication and Help
 
 * If you need help, use [Stack Overflow](http://stackoverflow.com/questions/tagged/explogger) (Tag 'explogger') or [open an issue](https://github.com/atereshkov/EXPLogger/issues/new).
 * If you'd like to ask a general question, use [Stack Overflow](http://stackoverflow.com/questions/tagged/explogger) or [open an issue](https://github.com/atereshkov/EXPLogger/issues/new).
