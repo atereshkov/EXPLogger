@@ -127,7 +127,6 @@ public class BaseTarget: Hashable {
     // MARK: Help
     
     func tag(for level: EXPLogger.LogLevel) -> String {
-        
         switch level {
         case EXPLogger.LogLevel.verbose:
             return logTag.verbose
