@@ -12,6 +12,7 @@ Colorful, flexible, lightweight logging for Swift 3 & Swift 4 (working on it :D)
 * [Installation](#installation)
 * [Advanced Usage](#advanced-usage)
 * [Documentation](#documentation)
+* [Communication and help](#communication-and-help)
 * [Changelog](#changelog)
 * [License](#license)
 
@@ -56,6 +57,7 @@ _This quick start method is intended just to get you up and running with the EXP
 
 Add this code at the top of your AppDelegate.swift to be able to use EXPLogger in your whole project. 
 Or just use it in your individual classes. It's up to you.
+
 
 1. Import
 
@@ -102,6 +104,17 @@ Will be filled soon.
 ## Documentation
 
 Will be filled soon.
+
+---
+
+## Communcation and Help
+
+* If you need help, use [Stack Overflow](http://stackoverflow.com/questions/tagged/explogger) (Tag 'explogger') or [open an issue](https://github.com/atereshkov/EXPLogger/issues/new).
+* If you'd like to ask a general question, use [Stack Overflow](http://stackoverflow.com/questions/tagged/explogger) or [open an issue](https://github.com/atereshkov/EXPLogger/issues/new).
+* If you've found a bug, [open an issue](https://github.com/atereshkov/EXPLogger/issues/new).
+* If you have a feature request, [open an issue](https://github.com/atereshkov/EXPLogger/issues/new).
+* If you want to contribute, submit a [pull request](https://github.com/atereshkov/EXPLogger/pulls).
+* If you use and enjoy EXPlogger, please star the [project on GitHub](https://github.com/atereshkov/EXPLogger).
 
 ---
 
