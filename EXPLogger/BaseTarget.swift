@@ -12,12 +12,12 @@ public class BaseTarget: Hashable {
     
     // custom log message for target
     public struct LogTag {
-        public var verbose = "VERBOSE"
-        public var debug = "DEBUG"
-        public var info = "INFO"
-        public var warning = "WARNING"
-        public var error = "ERROR"
-        public var critical = "CRITICAL"
+        public var verbose = "[VERBOSE]"
+        public var debug = "[DEBUG]"
+        public var info = "[INFO]"
+        public var warning = "[WARNING]"
+        public var error = "[ERROR]"
+        public var critical = "[CRITICAL]"
     }
     
     // custom color for target
@@ -30,8 +30,45 @@ public class BaseTarget: Hashable {
         public var critical = ""
     }
     
-    // don't log messages which are below this level
+    // MARK: Options
+    
+    /// Don't log messages which are below this level
     open var minLogLevel = EXPLogger.LogLevel.verbose
+    
+    /// Option: whether or not to output the date the log was created
+    open var showDate: Bool = true
+    
+    /// Option: whether or not to output the log identifier
+    open var showLogTag: Bool = true
+    
+    /// Option: whether or not to output the fileName that generated the log
+    open var showFileName: Bool = true
+    
+    /// Option: whether or not to output the function name that generated the log
+    open var showFunctionName: Bool = true
+    
+    /// Option: whether or not to output the thread's name the log was created on. NOTE: Doesn't work now. // TODO
+    open var showThreadName: Bool = false
+    
+    /// Option: whether or not to output the line number where the log was generated
+    open var showLineNumber: Bool = true
+    
+    /// Option: whether or not to output the log level of the log
+    open var showLevel: Bool = true
+    
+    /// Option: whether or not to output the file suffix (e.g. .swift)
+    open var showFileSuffix: Bool = false
+    
+    /// Option: whether or not to enable coloring output
+    open var enableColors: Bool = false
+    
+    /// Option: date format for log. Default is "HH:mm:ss.SSS"
+    open var defaultDateFormat = "HH:mm:ss.SSS"
+    
+    /// Option: time zone. Default is "Current"
+    open var defaultTimeZone = "" // empty = TimeZone.Current by default
+    
+    // MARK: Helper properties
     
     // custom output of log tag (info, debug, etc) for target
     open var logTag = LogTag()
@@ -42,8 +79,6 @@ public class BaseTarget: Hashable {
     var escape = ""
     
     private let dateFormatter = DateFormatter()
-    open var defaultDateFormat = "HH:mm:ss.SSS"
-    open var defaultTimeZone = "" // empty = Current by default
     
     // each target class must have an own hashValue
     lazy public var hashValue: Int = self.defaultHashValue
@@ -58,14 +93,33 @@ public class BaseTarget: Hashable {
         // todo add formatting
         var log = ""
         
-        log += formatDate() + " "
-        log += escape + color(for: level)
-        log += tag(for: level) + reset + " "
-        log += fileName(of: file, withoutSuffix: true) + "."
-        log += function + ":"
-        log += String(line) + " - "
-        log += msg
-        //log += thread
+        if showDate {
+            log += formatDate() + " "
+        }
+        if showLogTag {
+            log += escape + color(for: level)
+            log += tag(for: level) + reset + " "
+        }
+        
+        log += "["
+        
+        if showFileName {
+            log += fileName(of: file, withoutSuffix: !showFileSuffix) + "."
+        }
+        if showFunctionName {
+            log += function
+        }
+        
+        log += ":"
+        
+        if showLineNumber {
+            log += String(line)
+        }
+        
+        log += "]"
+        log += " - " + msg
+        
+        // TODO add thread name
         
         return log
     }

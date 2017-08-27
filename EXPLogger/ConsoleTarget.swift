@@ -27,12 +27,14 @@ public class ConsoleTarget: BaseTarget {
         logColor.critical = "35m"
         */
         
-        logColor.verbose = ""
-        logColor.debug = "➡ "
-        logColor.info = "❕ "
-        logColor.warning = "⚡ "
-        logColor.error = "❗ "
-        logColor.critical = "❌ "
+        if enableColors {
+            logColor.verbose = ""
+            logColor.debug = "➡ "
+            logColor.info = "❕ "
+            logColor.warning = "⚡ "
+            logColor.error = "❗ "
+            logColor.critical = "❌ "
+        }
     }
     
     override public func send(_ level: EXPLogger.LogLevel, msg: String, thread: String, file: String, function: String, line: Int) {
