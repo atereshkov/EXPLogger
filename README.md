@@ -170,7 +170,7 @@ Will be filled soon.
 
 ## Changelog
 
-See [CHANGELOG](https://github.com/atereshkov/EXPLogger/blob/master/CHANGELOG).
+See [CHANGELOG](https://github.com/atereshkov/EXPLogger/blob/master/CHANGELOG.md).
 
 ---
 
