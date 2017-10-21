@@ -44,36 +44,38 @@ public class EXPLogger {
     // MARK: Log
     
     // lowest priority
-    open class func verbose(_ message: String, _ file: String = #file, _ function: String = #function, line: Int = #line) {
-        perfom(level: .verbose, message: message, file: file, function: function, line: line)
+    open class func verbose(_ closure: @autoclosure () -> Any?, _ file: String = #file, _ function: String = #function, line: Int = #line) {
+        perfom(level: .verbose, message: closure, file: file, function: function, line: line)
     }
     
     // low priority
-    open class func debug(_ message: String, _ file: String = #file, _ function: String = #function, line: Int = #line) {
-        perfom(level: .debug, message: message, file: file, function: function, line: line)
+    open class func debug(_ closure: @autoclosure () -> Any?, _ file: String = #file, _ function: String = #function, line: Int = #line) {
+        perfom(level: .debug, message: closure, file: file, function: function, line: line)
     }
     
     // normal priority
-    open class func info(_ message: String, _ file: String = #file, _ function: String = #function, line: Int = #line) {
-        perfom(level: .info, message: message, file: file, function: function, line: line)
+    open class func info(_ closure: @autoclosure () -> Any?, _ file: String = #file, _ function: String = #function, line: Int = #line) {
+        perfom(level: .info, message: closure, file: file, function: function, line: line)
     }
     
     // high priority
-    open class func warning(_ message: String, _ file: String = #file, _ function: String = #function, line: Int = #line) {
-        perfom(level: .warning, message: message, file: file, function: function, line: line)
+    open class func warning(_ closure: @autoclosure () -> Any?, _ file: String = #file, _ function: String = #function, line: Int = #line) {
+        perfom(level: .warning, message: closure, file: file, function: function, line: line)
     }
     
     // highest priority
-    open class func error(_ message: String, _ file: String = #file, _ function: String = #function, line: Int = #line) {
-        perfom(level: .error, message: message, file: file, function: function, line: line)
+    open class func error(_ closure: @autoclosure () -> Any?, _ file: String = #file, _ function: String = #function, line: Int = #line) {
+        perfom(level: .error, message: closure, file: file, function: function, line: line)
     }
     
     // critical priority
-    open class func critical(_ message: String, _ file: String = #file, _ function: String = #function, line: Int = #line) {
-        perfom(level: .critical, message: message, file: file, function: function, line: line)
+    open class func critical(_ closure: @autoclosure () -> Any?, _ file: String = #file, _ function: String = #function, line: Int = #line) {
+        perfom(level: .critical, message: closure, file: file, function: function, line: line)
     }
     
-    public class func perfom(level: EXPLogger.LogLevel, message: String, file: String = #file, function: String = #function, line: Int = #line) {
+    public class func perfom(level: EXPLogger.LogLevel, message: () -> Any?, file: String = #file, function: String = #function, line: Int = #line) {
+        guard let closure = message() else { return }
+        let message = String(describing: closure)
         send(level: level, message: message, thread: threadName(), file: file, function: function, line: line)
     }
     
