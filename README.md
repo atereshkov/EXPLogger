@@ -35,7 +35,7 @@ Example of output in Xcode Console:
 To use EXPLogger with CocoaPods add this to your Podfile (Swift 3):
 
 ```
-pod 'EXPLogger', '~> 1.0.1'
+pod 'EXPLogger', '~> 1.0.3'
 ```
 
 Then run pod install.
