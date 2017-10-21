@@ -22,9 +22,20 @@ Colorful, flexible, lightweight logging for Swift 4.
 
 Example of output in Xcode Console:
 
+```
+23:21:37.635 [VERBOSE] [OrdersVC.viewDidLoad():24] - Some non important information
+23:21:37.636 [DEBUG] [OrdersVC.viewDidLoad():25] - Some useful information just to debugging
+23:21:37.636 [INFO] [OrdersVC.viewDidLoad():26] - Useful information, etc
+23:21:37.636 [WARNING] [OrdersVC.viewDidLoad():27] - Not a good information
+23:21:37.636 [ERROR] [OrdersVC.viewDidLoad():28] - Some important error
+23:21:37.636 [CRITICAL] [OrdersVC.viewDidLoad():29] - Something went so wrong with critical priority
+```
+
+Or one more example:
+
 ![Example of output](http://image.ibb.co/dXyJWk/image.png)
 
-* Now there are some problems with displaying colors from the Xcode 8, so they are temporarily replaced by Emoji.
+* Now there are some problems with displaying colors from the Xcode 8, so they are temporarily replaced by Emoji (if u want, ofc.
 
 ---
 
