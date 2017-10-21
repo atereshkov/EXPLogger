@@ -97,13 +97,13 @@ The different methods set the log level of the message. EXPLogger will only prin
 
 You can log simple strings:
 
-```
+```swift
 log.debug("Hi there, I'm EXPLogger!")
 ```
 
 Or just anything you want, for example:
 
-```
+```swift
 log.debug((4, 2, 1, 0, 5)) // array
 log.debug(true) // boolean
 log.debug(CGPoint(x: 1.1, y: 2.2)) // something like this
