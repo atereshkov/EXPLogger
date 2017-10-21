@@ -93,6 +93,23 @@ log.critical("Something went so wrong with critical prior")
 
 The different methods set the log level of the message. EXPLogger will only print messages with a log level that is greater to or equal to it's current log level setting. So a logger with a level of .error will only output log messages with a level of .error, or .critical.
 
+### Log Anything
+
+You can log simple strings:
+
+```
+log.debug("Hi there!")
+```
+
+Or just anything you want:
+
+```
+log.debug((4, 2, 1, 0, 5)) // array
+log.debug(true) // boolean
+log.debug(CGPoint(x: 1.1, y: 2.2)) // something like this
+log.debug(Enum.Option) // enums
+```
+
 ---
 
 ## Advanced Usage
