@@ -98,10 +98,10 @@ The different methods set the log level of the message. EXPLogger will only prin
 You can log simple strings:
 
 ```
-log.debug("Hi there!")
+log.debug("Hi there, I'm EXPLogger!")
 ```
 
-Or just anything you want:
+Or just anything you want, for example:
 
 ```
 log.debug((4, 2, 1, 0, 5)) // array
