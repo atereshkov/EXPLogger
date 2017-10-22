@@ -1,6 +1,9 @@
 osx_image: xcode9
 language: objective-c
 
+xcode_project: EXPLogger.xcodeproj
+xcode_scheme: EXPLogger
+
 # whitelist
 branches:
   only:
