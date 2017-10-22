@@ -1,8 +1,13 @@
 osx_image: xcode9
 language: objective-c
 
-xcode_project: EXPLogger.xcodeproj
-xcode_scheme: EXPLogger
+before_install:
+  - brew update
+  - gem install cocoapods --pre
+install: echo "<3"
+env:
+  - MODE=build
+script: ./travis-build.sh $MODE
 
 # whitelist
 branches:
