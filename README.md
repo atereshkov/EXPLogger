@@ -43,7 +43,7 @@ Or one more example:
 
 ### Cocoapods
 
-To use EXPLogger with CocoaPods add this to your Podfile (Swift 3):
+To use EXPLogger with CocoaPods add this to your Podfile:
 
 ```
 pod 'EXPLogger', '~> 1.0.3'
